@@ -2,9 +2,13 @@
   <div id="app">
     <div class="title">
       <div class="heading">Mmm, modals.</div>
-      <div class="subheading">(a prototype)</div>
+      <div class="subheading">( a prototype )</div>
     </div>
     <button class="launch-btn">Launch One</button>
+    <div class="footer">
+      <div class="by">Built by <a href="https://github.com/ctopheryoung" target="_blank">Chris Young</a>.</div>
+      <a href="https://github.com/ctopheryoung/vue-mmmodal-plugin-prototype" target="_blank" class="source">( source )</a>
+    </div>
   </div>
 </template>
 
@@ -15,52 +19,47 @@ export default {
 </script>
 
 <style lang="scss">
-*, *:before, *:after {box-sizing:inherit;}
-
-*{margin:0;padding:0;outline:none;list-style:none;font-weight:normal;font-size:inherit;appearance:none;border:none;background:transparent;color:inherit;}
-
-
-#app {
+* {
   font-family: 'Montserrat', sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   background-color: #ebecf0;
   color: #6d7587;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   height: 100vh;
-  padding: 40px;
 
   .title {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 96px;
 
     .heading {
       font-size: 72px;
+      padding: 24px;
     }
 
     .subheading {
-      font-size: 48px;
+      font-size: 42px;
     }
   }
 
   .launch-btn {
-    width: 200px;
-    font: 16px/1 'Montserrat', sans-serif;
-    background-color: #ebecf0;
-    height: 3em;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
     display: flex;
     justify-content: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    padding: 1em 4em;
     background-image: linear-gradient(to bottom right, black, white);
     background-blend-mode: soft-light;
-    text-align: center;
-    border-radius: 22px;
     box-shadow: -5px -5px 10px 0 #fafbff, 5px 5px 10px 0 #a6abbd;
+    border: none;
+    border-radius: 22px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 
     &:hover {
       background-blend-mode: overlay;
@@ -68,6 +67,23 @@ export default {
 
     &:active {
       transform: scale(0.975);
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 28px;
+
+    .by {
+      font-size: 18px;
+      padding: 12px;
+    }
+
+    .source {
+      font-size: 14px;
+      text-decoration: none;
     }
   }
 }
