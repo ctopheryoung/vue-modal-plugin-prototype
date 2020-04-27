@@ -1,8 +1,8 @@
 <template>
   <div>
-    <modal v-if="modal">
+    <Modal v-if="modal">
       <component :is="modal.component" />
-    </modal>
+    </Modal>
   </div>
 </template>
 
@@ -10,12 +10,6 @@
 export default {
   created() {
     this.$root._modalContainer = this;
-  },
-  mounted() {
-    debugger; // eslint-disable-line
-    this.$on('closeEvent', () => {
-      this.hide();
-    })
   },
   data() {
     return {
@@ -32,12 +26,17 @@ export default {
     hide() {
       this.modal = null;
     }
-  }
-  // beforeMount() {
-  //   this.$on('close', this.onClose);
-  // },
-  // beforeDestroy() {
-  //   this.$off('close', this.onClose);
-  // },
+  },
+  beforeMount() {
+    this.$root.$on('openEvent', (component) => {
+      this.show(component)
+    })
+    this.$root.$on('closeEvent', () => {
+      this.hide();
+    })
+  },
+  beforeDestroy() {
+    this.$root.$off();
+  },
 }
 </script>
