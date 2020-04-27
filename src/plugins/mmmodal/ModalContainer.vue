@@ -12,7 +12,6 @@ export default {
     this.$root._modalContainer = this;
   },
   mounted() {
-    debugger; // eslint-disable-line
     this.$on('closeEvent', () => {
       this.hide();
     })
