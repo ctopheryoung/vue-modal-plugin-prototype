@@ -4,7 +4,7 @@
       <div class="heading">Mmm, modals.</div>
       <div class="subheading">( a prototype )</div>
     </div>
-    <button class="launch-btn">Launch One</button>
+    <button class="launch-btn" @click="openSimpleModal">Launch One</button>
     <div class="footer">
       <div class="by">Built by <a href="https://github.com/ctopheryoung" target="_blank">Chris Young</a>.</div>
       <a href="https://github.com/ctopheryoung/vue-mmmodal-plugin-prototype" target="_blank" class="source">( source )</a>
@@ -13,8 +13,15 @@
 </template>
 
 <script>
+import SimpleModal from './components/modals/SimpleModal';
+
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    openSimpleModal() {
+      this.$mmmodal.open(SimpleModal);
+    }
+  }
 };
 </script>
 
