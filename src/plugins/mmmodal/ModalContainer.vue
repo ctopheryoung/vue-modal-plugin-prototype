@@ -7,12 +7,14 @@
 </template>
 
 <script>
+import Plugin from './index';
+
 export default {
   created() {
     this.$root._modalContainer = this;
   },
-  mounted() {
-    this.$on('closeEvent', () => {
+  beforeMount() {
+    Plugin.event.$on('closeEvent', () => {
       this.hide();
     })
   },

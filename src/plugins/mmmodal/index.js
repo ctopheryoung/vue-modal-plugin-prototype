@@ -3,12 +3,13 @@ import ModalContainer from './ModalContainer';
 
 const getModalContainer = (Vue, root) => {
   /**
-   * Dynamically inject the ModalContainer component onto the page
+   * Create a plugin instance if one hasn't already been created.
    */
   if (!root._modalContainer) {
     const container = document.body.appendChild(document.createElement('div'));
 
     new Vue({
+      name: 'Mmm, Modals',
       parent: root,
       render: h => h(ModalContainer)
     }).$mount(container);
@@ -20,6 +21,7 @@ const getModalContainer = (Vue, root) => {
 const Plugin = {
   install(Vue) {
     this.rootInstance = null;
+    this.event = new Vue();
 
     Vue.prototype.$mmmodal =  {
       open(modalComponent) {
@@ -28,8 +30,7 @@ const Plugin = {
       },
 
       close() {
-        const modalContainer = getModalContainer(Vue, Plugin.rootInstance);
-        modalContainer.$emit('closeEvent');
+        Plugin.event.$emit('closeEvent');
       }
     }
 
