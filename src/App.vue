@@ -4,7 +4,10 @@
       <div class="heading">Mmm, modals.</div>
       <div class="subheading">( a prototype )</div>
     </div>
-    <button class="launch-btn" @click="openSimpleModal">Launch One</button>
+    <div class="buttons">
+      <button class="launch-btn" @click="openSimpleModal">Launch One</button>
+      <button class="launch-btn" @click="openTheOtherSimpleModal">Launch Another</button>
+    </div>
     <div class="footer">
       <div class="by">Built by <a href="https://github.com/ctopheryoung" target="_blank">Chris Young</a>.</div>
       <a href="https://github.com/ctopheryoung/vue-mmmodal-plugin-prototype" target="_blank" class="source">( source )</a>
@@ -14,12 +17,16 @@
 
 <script>
 import SimpleModal from './components/modals/SimpleModal';
+import AnotherSimpleModal from './components/modals/AnotherSimpleModal';
 
 export default {
   name: 'App',
   methods: {
     openSimpleModal() {
       this.$mmmodal.open(SimpleModal);
+    },
+    openTheOtherSimpleModal() {
+      this.$mmmodal.open(AnotherSimpleModal);
     }
   }
 };
@@ -55,10 +62,16 @@ export default {
     }
   }
 
+  .buttons {
+    display: flex;
+  }
+
   .launch-btn {
     display: flex;
     justify-content: center;
-    padding: 1em 4em;
+    padding: 1em 0;
+    width: 280px;
+    margin: 2em;
     background-image: linear-gradient(to bottom right, black, white);
     background-blend-mode: soft-light;
     box-shadow: -5px -5px 10px 0 #fafbff, 5px 5px 10px 0 #a6abbd;
