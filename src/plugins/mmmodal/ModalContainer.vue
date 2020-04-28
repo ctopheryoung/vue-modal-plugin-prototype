@@ -34,11 +34,5 @@ export default {
       this.modal = null;
     }
   }
-  // beforeMount() {
-  //   this.$on('close', this.onClose);
-  // },
-  // beforeDestroy() {
-  //   this.$off('close', this.onClose);
-  // },
 }
 </script>
