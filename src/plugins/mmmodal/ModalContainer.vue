@@ -1,7 +1,7 @@
 <template>
   <div>
     <modal v-if="modal">
-      <component :is="modal.component" />
+      <component :is="modal.component" v-bind="modal.props" />
     </modal>
   </div>
 </template>
@@ -24,10 +24,10 @@ export default {
     }
   },
   methods: {
-    show(component) {
+    show(component, props = {}) {
       this.modal = {
-        name: 'Fuck!',
-        component
+        component,
+        props
       }
     },
     hide() {

@@ -6,12 +6,7 @@
         <button class="close-btn" @click="onClose">X</button>
       </div>
       <div class="body">
-        Yyyyyeeeaaahh yaaa yaaaaaaaaaaaaaaa yesssss yes yas yerrrsh 
-        yaaaaaaaaaaaaaaa yesssss yes yas yerrrsh yaaaaaaaaaaaaaaa 
-        yesssss yes yas yerrrsh yaaaaaaaaaaaaaaa yesssss yes yas 
-        yerrrsh yaaaaaaaaaaaaaaa yesssss yes yas yerrrsh 
-        yaaaaaaaaaaaaaaa yesssss yes yas yerrrsh mmm yaaaaaaaaaaaaaaa 
-        yesssss yes yas yerrrsh
+        Bound in prop: {{ text }}
       </div>
     </div>
   </div>
@@ -19,6 +14,7 @@
 
 <script>
 export default {
+  props: [ 'text' ],
   methods: {
     onClose() {
       this.$mmmodal.close();

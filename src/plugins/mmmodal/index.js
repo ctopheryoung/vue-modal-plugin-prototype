@@ -24,9 +24,9 @@ const Plugin = {
     this.event = new Vue();
 
     Vue.prototype.$mmmodal =  {
-      open(modalComponent) {
+      open(modalComponent, props) {
         const modalContainer = getModalContainer(Vue, Plugin.rootInstance);
-        modalContainer.show(modalComponent);
+        modalContainer.show(modalComponent, props);
       },
 
       close() {
