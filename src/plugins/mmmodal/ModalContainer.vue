@@ -30,11 +30,10 @@ export default {
         props
       }
     },
-    confirm(component, resolve, reject) {
+    confirm(component, props) {
       this.modal = {
         component,
-        resolve,
-        reject
+        props
       }
     },
     close() {

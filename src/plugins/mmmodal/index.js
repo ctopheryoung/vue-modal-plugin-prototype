@@ -26,7 +26,14 @@ const Plugin = {
     Vue.prototype.$mmmodal =  {
       open(modalComponent, props) {
         const modalContainer = getModalContainer(Vue, Plugin.rootInstance);
-        modalContainer.show(modalComponent, props);
+        modalContainer.open(modalComponent, props);
+      },
+
+      confirm(modalComponent) {
+        return new Promise((resolve, reject) => {
+          const modalContainer = getModalContainer(Vue, Plugin.rootInstance);
+          modalContainer.confirm(modalComponent, { resolve, reject });
+        })
       },
 
       close() {

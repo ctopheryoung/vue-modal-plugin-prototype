@@ -7,10 +7,18 @@
     <div class="buttons">
       <button class="launch-btn" @click="openSimpleModal">Launch One</button>
       <button class="launch-btn" @click="openTheOtherSimpleModal">Launch Another</button>
+      <button class="launch-btn" @click="openSimpleDialog">{{ dialogResultText ? dialogResultText : 'Launch Dialog'}}</button>
     </div>
     <div class="footer">
-      <div class="by">Built by <a href="https://github.com/ctopheryoung" target="_blank">Chris Young</a>.</div>
-      <a href="https://github.com/ctopheryoung/vue-mmmodal-plugin-prototype" target="_blank" class="source">( source )</a>
+      <div class="by">
+        Built by
+        <a href="https://github.com/ctopheryoung" target="_blank">Chris Young</a>.
+      </div>
+      <a
+        href="https://github.com/ctopheryoung/vue-mmmodal-plugin-prototype"
+        target="_blank"
+        class="source"
+      >( source )</a>
     </div>
   </div>
 </template>
@@ -18,15 +26,33 @@
 <script>
 import SimpleModal from './components/modals/SimpleModal';
 import AnotherSimpleModal from './components/modals/AnotherSimpleModal';
+import SimpleDialog from './components/modals/SimpleDialog';
 
 export default {
   name: 'App',
+  data() {
+    return {
+      dialogResultText: ''
+    };
+  },
   methods: {
     openSimpleModal() {
       this.$mmmodal.open(SimpleModal);
     },
     openTheOtherSimpleModal() {
-      this.$mmmodal.open(AnotherSimpleModal, { text: "Yesss yess yessssssss!"});
+      this.$mmmodal.open(AnotherSimpleModal, {
+        text: 'Yesss yess yessssssss!'
+      });
+    },
+    openSimpleDialog() {
+      if (this.dialogResultText) {
+        return this.dialogResultText = '';
+      }
+
+      this.$mmmodal
+        .confirm(SimpleDialog)
+        .then(() => this.dialogResultText = 'Confirmed!')
+        .catch(() => this.dialogResultText = 'Denied!');
     }
   }
 };
@@ -37,6 +63,10 @@ export default {
   font-family: 'Montserrat', sans-serif;
   background-color: #ebecf0;
   color: #6d7587;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 #app {
@@ -52,59 +82,60 @@ export default {
     align-items: center;
     margin-top: 96px;
 
-    .heading {
-      font-size: 72px;
-      padding: 24px;
-    }
-
-    .subheading {
-      font-size: 42px;
-    }
+  .heading {
+    font-size: 72px;
+    padding: 24px;
   }
 
-  .buttons {
-    display: flex;
+  .subheading {
+    font-size: 42px;
+  }
+}
+
+}
+
+.buttons {
+  display: flex;
+}
+
+.launch-btn {
+  display: flex;
+  justify-content: center;
+  padding: 1em 0;
+  width: 280px;
+  margin: 2em;
+  background-image: linear-gradient(to bottom right, black, white);
+  background-blend-mode: soft-light;
+  box-shadow: -5px -5px 10px 0 #fafbff, 5px 5px 10px 0 #a6abbd;
+  border: none;
+  border-radius: 22px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-blend-mode: overlay;
   }
 
-  .launch-btn {
-    display: flex;
-    justify-content: center;
-    padding: 1em 0;
-    width: 280px;
-    margin: 2em;
-    background-image: linear-gradient(to bottom right, black, white);
-    background-blend-mode: soft-light;
-    box-shadow: -5px -5px 10px 0 #fafbff, 5px 5px 10px 0 #a6abbd;
-    border: none;
-    border-radius: 22px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.2s ease;
+  &:active {
+    transform: scale(0.975);
+  }
+}
 
-    &:hover {
-      background-blend-mode: overlay;
-    }
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 28px;
 
-    &:active {
-      transform: scale(0.975);
-    }
+  .by {
+    font-size: 18px;
+    padding: 12px;
   }
 
-  .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 28px;
-
-    .by {
-      font-size: 18px;
-      padding: 12px;
-    }
-
-    .source {
-      font-size: 14px;
-      text-decoration: none;
-    }
+  .source {
+    font-size: 14px;
+    text-decoration: none;
   }
 }
 </style>
