@@ -6,7 +6,7 @@
         <button class="close-btn" @click="onClose">X</button>
       </div>
       <div class="body">
-        Bound in prop: {{ text }}
+        Bound in text prop: {{ text }}
       </div>
     </div>
   </div>
