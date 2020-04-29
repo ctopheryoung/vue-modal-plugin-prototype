@@ -15,7 +15,7 @@ export default {
   },
   beforeMount() {
     Plugin.event.$on('closeEvent', () => {
-      this.hide();
+      this.close();
     })
   },
   data() {
@@ -24,13 +24,20 @@ export default {
     }
   },
   methods: {
-    show(component, props = {}) {
+    open(component, props = {}) {
       this.modal = {
         component,
         props
       }
     },
-    hide() {
+    confirm(component, resolve, reject) {
+      this.modal = {
+        component,
+        resolve,
+        reject
+      }
+    },
+    close() {
       this.modal = null;
     }
   }
