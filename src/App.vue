@@ -26,7 +26,7 @@ export default {
       this.$mmmodal.open(SimpleModal);
     },
     openTheOtherSimpleModal() {
-      this.$mmmodal.open(AnotherSimpleModal, { text: "Helloooo modal!"});
+      this.$mmmodal.open(AnotherSimpleModal, { text: "Yesss yess yessssssss!"});
     }
   }
 };
