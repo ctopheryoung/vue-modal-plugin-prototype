@@ -51,8 +51,8 @@ export default {
 
       this.$mmmodal
         .confirm(SimpleDialog)
-        .then(() => this.dialogResultText = 'Confirmed!')
-        .catch(() => this.dialogResultText = 'Denied!');
+        .then(() => this.dialogResultText = 'Confirmed! 🥳')
+        .catch(() => this.dialogResultText = 'Denied! 😯');
     }
   }
 };
@@ -82,16 +82,15 @@ export default {
     align-items: center;
     margin-top: 96px;
 
-  .heading {
-    font-size: 72px;
-    padding: 24px;
-  }
+    .heading {
+      font-size: 72px;
+      padding: 24px;
+    }
 
-  .subheading {
-    font-size: 42px;
+    .subheading {
+      font-size: 42px;
+    }
   }
-}
-
 }
 
 .buttons {
@@ -101,7 +100,7 @@ export default {
 .launch-btn {
   display: flex;
   justify-content: center;
-  padding: 1em 0;
+  height: 50px;
   width: 280px;
   margin: 2em;
   background-image: linear-gradient(to bottom right, black, white);

@@ -2,10 +2,10 @@
   <div class="modal">
     <div class="content">
       <div class="header">
-        <div class="title">Title</div>
+        <div class="title">Dialog</div>
       </div>
       <div class="body">
-        Content
+        Any content can go here. The method that opened this dialog returns a promise that resolves or rejects based on which button you click. Choose wisely.
       </div>
       <div class="buttons">
         <button class="launch-btn" @click="onConfirm">Confirm</button>
