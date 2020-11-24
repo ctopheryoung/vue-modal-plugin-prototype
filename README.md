@@ -1,5 +1,5 @@
 # vue-modal-plugin-prototype
-Mmmm, modals :) 
+Mmmm, Vue flavored modals :) 
 
 ## Project setup
 ```
@@ -8,7 +8,7 @@ npm install
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+npm start
 ```
 
 ### Compiles and minifies for production
