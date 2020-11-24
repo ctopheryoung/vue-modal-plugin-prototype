@@ -1,7 +1,7 @@
 <template>
-  <div class="mmmodal--container">
-    <div class="mmmodal--overlay"></div>
-    <div class="mmmodal--modal"><slot/></div>
+  <div class="modal--container">
+    <div class="modal--overlay"></div>
+    <div class="modal--modal"><slot/></div>
   </div>
 </template>
 
@@ -20,10 +20,10 @@ export default {
       // Maintain scrolled position of page content behind modal
       document.body.style.top = `${ this.offsetTop * -1 }px`
 
-      document.body.classList.add('mmmodal--block-scroll');
+      document.body.classList.add('modal--block-scroll');
     },
     reenableBodyScroll() {
-      document.body.classList.remove('mmmodal--block-scroll');
+      document.body.classList.remove('modal--block-scroll');
 
       // Remove the inline style
       document.body.style.top = null;
@@ -46,13 +46,13 @@ export default {
 </script>
 
 <style lang="scss">
-.mmmodal--block-scroll {
+.modal--block-scroll {
   position: fixed;
   width: 100%;
   overflow-y: scroll;
 }
 
-.mmmodal--container {
+.modal--container {
   position: fixed;
   box-sizing: border-box;
   left: 0;
@@ -61,7 +61,7 @@ export default {
   height: 100vh;
   z-index: 999;
 
-  .mmmodal--overlay {
+  .modal--overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -71,7 +71,7 @@ export default {
     background-color: rgba($color: #000000, $alpha: 0.75);
   }
 
-  .mmmodal--modal {
+  .modal--modal {
     position: relative;
     display: flex;
     height: 100vh;

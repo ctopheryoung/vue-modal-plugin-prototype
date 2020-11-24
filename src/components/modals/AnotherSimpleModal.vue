@@ -17,7 +17,7 @@ export default {
   props: [ 'text' ],
   methods: {
     onClose() {
-      this.$mmmodal.close();
+      this.$modal.close();
     }
   }
 }

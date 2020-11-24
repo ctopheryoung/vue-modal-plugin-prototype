@@ -15,7 +15,7 @@
         <a href="https://github.com/ctopheryoung" target="_blank">Chris Young</a>.
       </div>
       <a
-        href="https://github.com/ctopheryoung/vue-mmmodal-plugin-prototype"
+        href="https://github.com/ctopheryoung/vue-modal-plugin-prototype"
         target="_blank"
         class="source"
       >( source )</a>
@@ -37,10 +37,10 @@ export default {
   },
   methods: {
     openSimpleModal() {
-      this.$mmmodal.open(SimpleModal);
+      this.$modal.open(SimpleModal);
     },
     openTheOtherSimpleModal() {
-      this.$mmmodal.open(AnotherSimpleModal, {
+      this.$modal.open(AnotherSimpleModal, {
         text: 'Yesss yess yessssssss!'
       });
     },
@@ -49,7 +49,7 @@ export default {
         return this.dialogResultText = '';
       }
 
-      this.$mmmodal
+      this.$modal
         .confirm(SimpleDialog)
         .then(() => this.dialogResultText = 'Confirmed! 🥳')
         .catch(() => this.dialogResultText = 'Denied! 😯');

@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-import mmmodal from './plugins/mmmodal';
+import modal from './plugins/modal';
 
 Vue.config.productionTip = false
 
-Vue.use(mmmodal);
+Vue.use(modal);
 
 new Vue({
   render: h => h(App),

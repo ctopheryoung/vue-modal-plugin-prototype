@@ -24,11 +24,11 @@ export default {
   methods: {
     onConfirm() {
       this.resolve();
-      this.$mmmodal.close();
+      this.$modal.close();
     },
     onDeny() {
       this.reject();
-      this.$mmmodal.close();
+      this.$modal.close();
     }
   }
 }

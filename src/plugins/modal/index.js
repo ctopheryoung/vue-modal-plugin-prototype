@@ -23,7 +23,7 @@ const Plugin = {
     this.rootInstance = null;
     this.event = new Vue();
 
-    Vue.prototype.$mmmodal =  {
+    Vue.prototype.$modal =  {
       open(modalComponent, props) {
         const modalContainer = getModalContainer(Vue, Plugin.rootInstance);
         modalContainer.open(modalComponent, props);
@@ -42,7 +42,7 @@ const Plugin = {
     }
 
     /**
-     * Register mmmodal components
+     * Register modal components
      */
     Vue.component('Modal', Modal)
     Vue.component('ModalContainer', ModalContainer)

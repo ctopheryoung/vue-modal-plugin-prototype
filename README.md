@@ -1,4 +1,4 @@
-# vue-mmmodal-plugin-prototype
+# vue-modal-plugin-prototype
 Mmmm, modals :) 
 
 ## Project setup
