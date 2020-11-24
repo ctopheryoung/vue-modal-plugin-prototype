@@ -100,6 +100,7 @@ export default {
 .launch-btn {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 50px;
   width: 280px;
   margin: 2em;
@@ -123,7 +124,7 @@ export default {
 
 .footer {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;;
   align-items: center;
   margin-bottom: 28px;
 
