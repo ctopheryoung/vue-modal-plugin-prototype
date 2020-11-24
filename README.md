@@ -1,6 +1,8 @@
 # vue-modal-plugin-prototype
 Mmmm, Vue flavored modals 😋
 
+[Check it out](https://ctopheryoung.github.io/vue-modal-plugin-prototype/)!
+
 ## Project setup
 ```
 npm install
