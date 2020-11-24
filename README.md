@@ -1,5 +1,5 @@
 # vue-modal-plugin-prototype
-Mmmm, Vue flavored modals :) 
+Mmmm, Vue flavored modals 😋
 
 ## Project setup
 ```
